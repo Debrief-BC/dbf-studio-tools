@@ -1,0 +1,26 @@
+{
+  "version": "0.1.14",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "lerna": "^2.10.2"
+  },
+  "scripts": {
+    "diff": "lerna diff",
+    "updated": "lerna updated",
+    "bootstrap": "lerna bootstrap",
+    "publish": "lerna publish",
+    "release": "lerna bootstrap; lerna publish;",
+    "tag": "gulp; gulp publishTag;",
+    "remove-all-install": "npm run remove-install; npm run remove-install-analyzer; npm run remove-install-astwalker; npm run remove-install-debug; npm run remove-install-lib; npm run remove-install-simulator; npm run remove-install-tests; npm run remove-install-url-resolver; npm run remove-install-remixd; npm run remove-install-solidity;",
+    "remove-install": "rm package-lock.json; rm -rf node_modules",
+    "remove-install-analyzer": "rm dbf-analyzer/package-lock.json; rm -rf dbf-analyzer/node_modules",
+    "remove-install-astwalker": "rm dbf-astwalker/package-lock.json; rm -rf dbf-astwalker/node_modules; rm -rf dbf-astwalker/dist",
+    "remove-install-debug": "rm dbf-debug/package-lock.json; rm -rf dbf-debug/node_modules",
+    "remove-install-lib": "rm dbf-lib/package-lock.json; rm -rf dbf-lib/node_modules",
+    "remove-install-simulator": "rm dbf-simulator/package-lock.json; rm -rf dbf-simulator/node_modules",
+    "remove-install-solidity": "rm dbf-solidity/package-lock.json; rm -rf dbf-solidity/node_modules",
+    "remove-install-tests": "rm dbf-tests/package-lock.json; rm -rf dbf-tests/node_modules; rm -rf dbf-tests/dist",
+    "remove-install-url-resolver": "rm dbf-url-resolver/package-lock.json; rm -rf dbf-url-resolver/node_modules; rm -rf dbf-url-resolver/dist",
+    "remove-install-remixd": "rm remixd/package-lock.json; rm -rf remixd/node_modules"
+  }
+}

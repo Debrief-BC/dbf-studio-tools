@@ -1,0 +1,23 @@
+{
+  "lerna": "2.10.2",
+  "packages": [
+    "dbf-debug",
+    "dbf-lib",
+    "dbf-solidity",
+    "dbf-analyzer",
+    "dbf-tests",
+    "dbf-simulator",
+    "dbf-url-resolver",
+    "dbf-astwalker"
+  ],
+  "command": {
+    "init": {
+      "exact": true
+    },
+    "publish": {
+      "exact": true,
+      "skipGit": true
+    }
+  },
+  "version": "independent"
+}

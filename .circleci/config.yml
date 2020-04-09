@@ -1,0 +1,88 @@
+# Javascript Node CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+#
+version: 2
+jobs:
+  dbf-lib:
+    docker:
+        - image: circleci/node:10
+    environment:
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run: npm install && npm run bootstrap
+      - run: cd dbf-lib && npm test
+
+  dbf-debug:
+     docker:
+        - image: circleci/node:10
+     environment:
+     working_directory: ~/repo
+     steps:
+      - checkout
+      - run: npm install && npm run bootstrap
+      - run: cd dbf-debug && npm test
+
+  dbf-analyzer:
+    docker:
+        - image: circleci/node:10
+    environment:
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run: npm install && npm run bootstrap
+      - run: cd dbf-analyzer && npm test
+
+  dbf-tests:
+    docker:
+        - image: circleci/node:10
+    environment:
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run: npm install && npm run bootstrap
+      - run: cd dbf-tests && npm test
+
+  dbf-astwalker:
+    docker:
+        - image: circleci/node:10
+    environment:
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run: npm install && npm run bootstrap
+      - run: cd dbf-astwalker && npm test
+
+  dbf-simulator:
+    docker:
+        - image: circleci/node:10
+    environment:
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run: npm install && npm run bootstrap
+      - run: cd dbf-simulator && npm test
+
+  dbf-url-resolver:
+    docker:
+      - image: circleci/node:10
+    environment:
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run: npm install && npm run bootstrap
+      - run: cd dbf-url-resolver && npm run build && npm test
+
+
+workflows:
+  version: 2
+  build_all:
+    jobs:
+      - dbf-lib
+      - dbf-debug
+      - dbf-analyzer
+      - dbf-tests
+      - dbf-astwalker
+      - dbf-simulator
+      - dbf-url-resolver
